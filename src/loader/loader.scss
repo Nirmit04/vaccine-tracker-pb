@@ -1,0 +1,22 @@
+
+body {
+    overflow: hidden;
+  }
+  .container-fluid1 {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    overflow: hidden !important;
+    backdrop-filter: blur(2px);
+    z-index: 10;
+  }
+  .container11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    animation-delay: 3s;
+  }
