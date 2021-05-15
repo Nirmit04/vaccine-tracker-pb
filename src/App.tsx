@@ -8,7 +8,8 @@ export interface ICenter {
   center_id: number,
   address: string,
   name: string,
-  sessions: Array<ISessionWk>
+  sessions: Array<ISessionWk>,
+  pincode:number
 }
 interface ISessionWk {
   available_capacity: number,
@@ -20,6 +21,7 @@ export interface IDispCenter {
   sno: string,
   name: string,
   address: string,
+  pincode:string,
   [x: string]: string,
 }
 export interface ILocalState {
