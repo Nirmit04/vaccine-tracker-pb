@@ -1,6 +1,7 @@
 import { ICenter, IDispCenter } from '../App';
 
 export const formatSessions = (rawCenterList: Array<ICenter>, filters: { vaccinePreference, ageLess45, date }) => {
+    console.log(rawCenterList);
     let availabilityCount:number=0;
     let dispCenters = [];
     for (let center of rawCenterList) {
@@ -8,7 +9,8 @@ export const formatSessions = (rawCenterList: Array<ICenter>, filters: { vaccine
             center_id: center.center_id,
             address: center.address,
             name: center.name,
-            sessions: center.sessions
+            sessions: center.sessions,
+            pincode:center.pincode
         };
         rawCenterData.sessions = rawCenterData.sessions.filter(el => el.available_capacity > 0);
         if (filters.vaccinePreference !== 'NO' && rawCenterData.sessions.length > 0) {
@@ -21,7 +23,7 @@ export const formatSessions = (rawCenterList: Array<ICenter>, filters: { vaccine
             dispCenters.push(rawCenterData)
         }
     }
-    const cols = ['S.No.', 'Name', 'Address'];
+    const cols = ['S.No.', 'Name', 'Address','Pincode'];
     for (let i = 0; i <= 5; i++) {
         cols.push(formatDate(addDays(filters.date, i)))
     }
@@ -32,6 +34,7 @@ export const formatSessions = (rawCenterList: Array<ICenter>, filters: { vaccine
             name: el.name,
             sno: (index + 1).toString(),
             address: el.address,
+            pincode:el.pincode.toString()
         }
         for (let i = 3; i < cols.length; i++) {
             let session = el.sessions.find(el1 => el1.date === cols[i])
@@ -43,8 +46,6 @@ export const formatSessions = (rawCenterList: Array<ICenter>, filters: { vaccine
         }
         data.push(record)
     })
-    console.log(data);
-    
     return { columns: cols, rows: data,availabilityCount:availabilityCount }
 }
 

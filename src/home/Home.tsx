@@ -150,12 +150,13 @@ export default function Home({ }: Props): ReactElement {
                                         <div className={`col0 cell`}>{el.sno}</div>
                                         <div className={`col1 cell`}>{el.name}</div>
                                         <div className={`col2 cell`}>{el.address}</div>
-                                        <div className={`col3 cell ${el[columns[3]]}`}>{el[columns[3]]}</div>
-                                        <div className={`col4 cell ${el[columns[4]]}`}>{el[columns[4]]}</div>
-                                        <div className={`col5 cell ${el[columns[5]]}`}>{el[columns[5]]}</div>
-                                        <div className={`col6 cell ${el[columns[6]]}`}>{el[columns[6]]}</div>
-                                        <div className={`col7 cell ${el[columns[7]]}`}>{el[columns[7]]}</div>
-                                        <div className={`col8 cell ${el[columns[8]]}`}>{el[columns[8]]}</div>
+                                        <div className={`col3 cell`}>{el.pincode}</div>
+                                        <div className={`col4 cell ${el[columns[3]]}`}>{el[columns[3]]}</div>
+                                        <div className={`col5 cell ${el[columns[4]]}`}>{el[columns[4]]}</div>
+                                        <div className={`col6 cell ${el[columns[5]]}`}>{el[columns[5]]}</div>
+                                        <div className={`col7 cell ${el[columns[6]]}`}>{el[columns[6]]}</div>
+                                        <div className={`col8 cell ${el[columns[7]]}`}>{el[columns[7]]}</div>
+                                        <div className={`col9 cell ${el[columns[8]]}`}>{el[columns[8]]}</div>
                                     </div>
                                 )
                             })}
